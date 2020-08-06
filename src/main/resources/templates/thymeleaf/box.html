@@ -1,0 +1,26 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <title>Box example</title>
+</head>
+<body>
+<div class="box-wrapper">
+    <div class="row">
+        <div class="col-md-4" th:each="student: ${students}">
+            <div class="box">
+                <div class="image">
+                    <img th:src="${student.imgUrl}"/>
+                </div>
+                <div class="info">
+                    <h5 th:text="'Name: ' + ${student.name}"></h5>
+                    <span th:text="'Age: ' + ${student.age}" class="age-wrap"></span>
+                    <span th:text="'Address: '+${student.address}" class="address-wrap"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
